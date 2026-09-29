@@ -1,0 +1,15 @@
+{
+  "ink": "#1b2b3a",
+  "muted": "#65747c",
+  "accent": "#b76042",
+  "secondary": "#447a78",
+  "rule": "#d7dedc",
+  "stripe": "#eef2ef",
+  "tint": "#e9f0ed",
+  "paper": "#faf9f5",
+  "placeholder": "#e8eeeb",
+  "cover_background": "#1b2b3a",
+  "body_font": "IBMPlexSans",
+  "heading_font": "IBMPlexSerif",
+  "footer_label": "Confidential"
+}

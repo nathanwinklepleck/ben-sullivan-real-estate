@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup (Windows)",
+      "type": "shell",
+      "command": "powershell",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "scripts\\windows\\setup.ps1"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Start backend",
+      "type": "shell",
+      "command": ".venv/bin/python -m uvicorn cre_model.api:app --app-dir backend --host 127.0.0.1 --port 8000 --reload",
+      "windows": {
+        "command": ".venv\\Scripts\\python.exe -m uvicorn cre_model.api:app --app-dir backend --host 127.0.0.1 --port 8000 --reload",
+        "options": { "env": { "WEASYPRINT_DLL_DIRECTORIES": "C:\\msys64\\mingw64\\bin" } }
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "uvicorn",
+        "pattern": { "regexp": "^__never__$" },
+        "background": { "activesBegins": true, "beginsPattern": ".", "endsPattern": "Application startup complete" }
+      }
+    },
+    {
+      "label": "Start frontend",
+      "type": "shell",
+      "command": "npm run dev -- --host 127.0.0.1 --port 5173 --strictPort",
+      "windows": { "command": "npm.cmd run dev -- --host 127.0.0.1 --port 5173 --strictPort" },
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "vite",
+        "pattern": { "regexp": "^__never__$" },
+        "background": { "activesBegins": true, "beginsPattern": ".", "endsPattern": "Local:" }
+      }
+    },
+    {
+      "label": "Start app",
+      "dependsOn": ["Start backend", "Start frontend"],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Run tests",
+      "type": "shell",
+      "command": ".venv/bin/python -m pytest",
+      "windows": {
+        "command": ".venv\\Scripts\\python.exe -m pytest",
+        "options": { "env": { "WEASYPRINT_DLL_DIRECTORIES": "C:\\msys64\\mingw64\\bin" } }
+      },
+      "problemMatcher": [],
+      "group": { "kind": "test", "isDefault": true }
+    }
+  ]
+}

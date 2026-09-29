@@ -1,0 +1,79 @@
+{
+  "property_name": "Palmer Apartments",
+  "address": "Sample address, Madison, Wisconsin",
+  "report_label": "HYPOTHETICAL TEST EXPORT - FOR ILLUSTRATION ONLY",
+  "property_type": "multifamily",
+  "deal_type": "development",
+  "closing_date": "2026-01-01",
+  "analysis_start_date": "2026-01-01",
+  "units": 120,
+  "total_nra_sf": 90000,
+  "illustrative_investment_amount": 100000,
+  "hold_years": 7,
+  "exit_cap_rate": 0.0525,
+  "sale_cost_rate": 0.02,
+  "vacancy_rate": 0.05,
+  "concessions_rate": 0.01,
+  "bad_debt_rate": 0.005,
+  "other_income_per_unit_monthly": 85,
+  "revenue_growth_rate": 0.03,
+  "expense_growth_rate": 0.03,
+  "replacement_reserve_per_unit_annual": 300,
+  "construction_months": 18,
+  "lease_up_absorption_units_monthly": 8,
+  "stabilization_month": 36,
+  "uses": {
+    "land": 5000000,
+    "hard_costs": 18000000,
+    "soft_costs": 3000000,
+    "developer_fee": 1000000,
+    "financing_closing_costs": 800000,
+    "capitalized_reserves": 300000,
+    "contingency": 1000000
+  },
+  "sources": {
+    "equity": 11170000,
+    "tif_grants": 1100000,
+    "other_subsidy": 0
+  },
+  "expenses": {
+    "property_taxes": 360000,
+    "insurance": 120000,
+    "cam": 0,
+    "utilities": 160000,
+    "payroll": 220000,
+    "repairs": 110000,
+    "general_admin": 80000,
+    "advertising": 40000,
+    "management_rate": 0.04
+  },
+  "unit_mix": [
+    {"unit_type": "Studio", "count": 24, "average_sf": 550, "current_rent_monthly": 1350, "stabilized_rent_monthly": 1450},
+    {"unit_type": "One bedroom", "count": 60, "average_sf": 725, "current_rent_monthly": 1650, "stabilized_rent_monthly": 1750},
+    {"unit_type": "Two bedroom", "count": 36, "average_sf": 1050, "current_rent_monthly": 2150, "stabilized_rent_monthly": 2300}
+  ],
+  "rent_roll": [],
+  "loans": [
+    {
+      "name": "Construction / senior debt",
+      "amount": 17000000,
+      "rate": 0.065,
+      "rate_type": "fixed",
+      "spread": 0,
+      "interest_only_months": 18,
+      "amortization_years": 30,
+      "term_months": 84,
+      "origination_fee_rate": 0.01
+    }
+  ],
+  "investor": {
+    "gp_coinvest_pct": 0.1,
+    "minimum_investment": 25000,
+    "preferred_return_rate": 0.07,
+    "gp_catch_up": true,
+    "tiers": [
+      {"name": "First promote", "hurdle_irr": 0.17, "lp_split": 0.8, "gp_split": 0.2},
+      {"name": "Residual promote", "hurdle_irr": null, "lp_split": 0.5, "gp_split": 0.5}
+    ]
+  }
+}
